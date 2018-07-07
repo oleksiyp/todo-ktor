@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<script>
+    var ws = new WebSocket("ws://localhost:8080/notifications");
+    ws.onmessage = function(msg) {
+        console.log(msg.data);
+    }
+</script>
+
+<pre>
+    curl --header "Content-Type: application/json" \
+         --request POST \
+         --data '{"completed": true, "name": "abc", "description": "ghi"}' \
+         http://localhost:8080/todo
+</pre>
+
+</body>
+</html>
